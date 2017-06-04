@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 192dc0f9b87164778a5b5ce5635a8cf6
+timeCreated: 1495441791
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - fish2_bluePrefab: {fileID: 1291997572060846, guid: 86112ff397ec841189e1832d5b6189d3,
+      type: 2}
+  - fish1_redPrefab: {fileID: 1740191179145726, guid: 6e5cafb9f808b437ea4ede2a93b9c7e0,
+      type: 2}
+  - fish3_yellowPrefab: {fileID: 1072901361981008, guid: d405bb218f5f04c94a84d3e87f46ab0f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
