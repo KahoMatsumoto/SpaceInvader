@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnkoController : MonoBehaviour {
-
+	// githubてすと
 
 
 	// Use this for initialization
