@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class AnkoController : MonoBehaviour {
 	// githubてすと
 	GameObject bR, bY, bB;
+    GameObject spnMid;
 
 	// Use this for initialization
 	void Start () {
 		this.bR = GameObject.Find ("bulletR");
 		this.bB = GameObject.Find ("bulletB");
 		this.bY = GameObject.Find ("bulletY");
+        this.spnMid = GameObject.Find("spnMid");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//マウスのx,y座標を取得
-		Vector3 vecMouse = Input.mousePosition;
+		Vector3 vecMouse = spnMid.transform.position;
 		//ワールド座標に変換じゃ！！
 		Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
 		//オブジェクトに代入じゃ！！
