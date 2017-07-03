@@ -3,15 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Kinect = Windows.Kinect;
 
-public class spnMidController : MonoBehaviour
+public class BSend : MonoBehaviour
 {
-    // public Material BoneMaterial;
+    public Material BoneMaterial;
     public GameObject BodySourceManager;
 
     private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
     private BodySourceManager _BodyManager;
 
-    /*
     private Dictionary<Kinect.JointType, Kinect.JointType> _BoneMap = new Dictionary<Kinect.JointType, Kinect.JointType>()
     {
         { Kinect.JointType.FootLeft, Kinect.JointType.AnkleLeft },
@@ -43,7 +42,6 @@ public class spnMidController : MonoBehaviour
         { Kinect.JointType.SpineShoulder, Kinect.JointType.Neck },
         { Kinect.JointType.Neck, Kinect.JointType.Head },
     };
-    */
 
     void Update()
     {
@@ -89,7 +87,7 @@ public class spnMidController : MonoBehaviour
                 _Bodies.Remove(trackingId);
             }
         }
-
+        
         foreach (var body in data)
         {
             if (body == null)
@@ -132,6 +130,8 @@ public class spnMidController : MonoBehaviour
 
     private void RefreshBodyObject(Kinect.Body body, GameObject bodyObject)
     {
+        Vector3 center = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineBase]);
+
         for (Kinect.JointType jt = Kinect.JointType.SpineBase; jt <= Kinect.JointType.ThumbRight; jt++)
         {
             Kinect.Joint sourceJoint = body.Joints[jt];

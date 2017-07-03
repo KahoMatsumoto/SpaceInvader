@@ -62,6 +62,6 @@ public class FishController : MonoBehaviour {
 		crPos.y = --count;
 		transform.position = crPos;
 		transform.localScale = new Vector3 (-dir*0.15f, 0.15f, 1);
-		Debug.Log (this.count);
+		// Debug.Log (this.count);
 	}
 }
