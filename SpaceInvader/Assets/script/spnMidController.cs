@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+ * using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Kinect = Windows.Kinect;
@@ -44,6 +45,7 @@ public class spnMidController : MonoBehaviour
         { Kinect.JointType.Neck, Kinect.JointType.Head },
     };
     */
+    /*
 
     void Update()
     {
@@ -179,3 +181,4 @@ public class spnMidController : MonoBehaviour
         return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
     }
 }
+*/

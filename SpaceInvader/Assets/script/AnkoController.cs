@@ -19,13 +19,25 @@ public class AnkoController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//マウスのx,y座標を取得
-		Vector3 vecMouse = spnMid.transform.position;
+        //マウスのx,y座標を取得
+        Vector3 vecMouse = Input.mousePosition;
+        //ワールド座標に変換じゃ！！
+        Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
+        //オブジェクトに代入じゃ！！
+        Vector3 ankoPos = new Vector3(screenPos.x, -4, 0);
+        transform.position = ankoPos;
+
+        /*
+        //マウスのx,y座標を取得
+        Vector3 vecMouse = spnMid.transform.position;
 		//ワールド座標に変換じゃ！！
 		Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
 		//オブジェクトに代入じゃ！！
 		Vector3 ankoPos = new Vector3(screenPos.x,-4,0);
 		transform.position = ankoPos;
+
+    */
+
 		Jugde (bR);
 		Jugde (bB);
 		Jugde (bY);
@@ -43,8 +55,9 @@ public class AnkoController : MonoBehaviour {
 
 		if (d < r1 + r2) {
 			SceneManager.LoadScene ("GameOver");
+            Debug.Log("遷移");
 		}
-		Debug.Log (d);
+		//Debug.Log ();
 
 	}
 
