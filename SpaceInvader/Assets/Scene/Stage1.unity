@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab2fe270746e48e1bb7fe78c1c31d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anko: {fileID: 1608324845}
 --- !u!212 &1222501470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -431,6 +432,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1608324845 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1945392855978832, guid: cc0f46bb02a120b45b0767b14798b451,
+    type: 2}
+  m_PrefabInternal: {fileID: 1643476428}
 --- !u!1001 &1643476428
 Prefab:
   m_ObjectHideFlags: 0
@@ -729,3 +735,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe6b289e366f45e481c83201efc153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: 0

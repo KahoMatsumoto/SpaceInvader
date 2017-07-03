@@ -1,17 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class bulletRController : MonoBehaviour {
 
 	GameObject fish;
+    public int count = 0;
 
 	// Use this for initialization
 	void Start () {
+        for(int i = 0; i < 3; i++)
+        {
+            Thread.Sleep(1000);
+        }
+        count++;
 	}
 
 	// Update is called once per frame
 	void Update () {
+        if (count == 0) return;
 		// フレームごとに等速で下降させる
 		transform.Translate(0,0.025f,0);
 
