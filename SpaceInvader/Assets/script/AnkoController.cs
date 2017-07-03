@@ -14,7 +14,7 @@ public class AnkoController : MonoBehaviour {
 		this.bR = GameObject.Find ("bulletR");
 		this.bB = GameObject.Find ("bulletB");
 		this.bY = GameObject.Find ("bulletY");
-        this.spnMid = GameObject.Find("spnMid");
+       
 	}
 	
 	// Update is called once per frame
