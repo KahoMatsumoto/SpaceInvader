@@ -10,6 +10,9 @@ public class FishController : MonoBehaviour {
 
 	GameObject bullet;
 
+    GameObject UIDirector;
+    public int value;
+
 	// Use this for initialization
 	void Start () {
 		this.stPos = transform.position;
@@ -42,6 +45,7 @@ public class FishController : MonoBehaviour {
 
             bullet.transform.position = 
                 GameObject.Find("ankou").transform.position;
+            UIDirector.AddPoint(value);
 			Destroy (gameObject);
 		}
 	}

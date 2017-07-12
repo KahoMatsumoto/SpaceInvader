@@ -19,4 +19,10 @@ public class UIDirector : MonoBehaviour {
 	void Update () {
 		
 	}
+    public static void AddPoint(int p) {
+        AddScore(p);
+    } 
+    static void AddScore(int p) {
+        score += p;
+    }
 }
