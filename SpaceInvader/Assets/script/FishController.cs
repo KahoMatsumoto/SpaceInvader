@@ -31,15 +31,17 @@ public class FishController : MonoBehaviour {
 		float r2 = 0.1f;	// 弾の半径
 
 		if (d < r1 + r2) {
-			// 衝突した場合は弾をもどす
-			//マウスのx,y座標を取得
-			Vector3 vecMouse = Input.mousePosition;
-			//ワールド座標に変換じゃ！！
-			Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
-			//オブジェクトに代入じゃ！！
-			Vector3 ankoPos = new Vector3(screenPos.x,-4,0);
-			bullet.transform.position = ankoPos;
+            //// 衝突した場合は弾をもどす
+            ////マウスのx,y座標を取得
+            //Vector3 vecMouse = Input.mousePosition;
+            ////ワールド座標に変換じゃ！！
+            //Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
+            ////オブジェクトに代入じゃ！！
+            //Vector3 ankoPos = new Vector3(screenPos.x,-4,0);
+            //bullet.transform.position = ankoPos;
 
+            bullet.transform.position = 
+                GameObject.Find("ankou").transform.position;
 			Destroy (gameObject);
 		}
 	}
