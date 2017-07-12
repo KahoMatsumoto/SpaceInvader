@@ -54,8 +54,8 @@ public class AnkoController : MonoBehaviour {
 		float r2 = 0.7f;	// ankoの半径
 
 		if (d < r1 + r2) {
-			SceneManager.LoadScene ("GameOver");
-            Debug.Log("遷移");
+			//SceneManager.LoadScene ("GameOver");
+            //Debug.Log("遷移");
 		}
 		//Debug.Log ();
 
