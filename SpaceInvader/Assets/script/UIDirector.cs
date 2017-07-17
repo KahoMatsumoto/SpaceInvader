@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UIDirector : MonoBehaviour {
 
     public Text scoreText; // Text用変数
-    private int score = 0; // スコア計算用変数
+//    private int score = 0; // スコア計算用変数
 
 
 	// Use this for initialization

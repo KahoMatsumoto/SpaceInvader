@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneDirector : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class SceneDirector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(){}
+		if(Input.GetKey(KeyCode.R)){
+			SceneManager.LoadScene ("Right");
+		}
 	}
 }
