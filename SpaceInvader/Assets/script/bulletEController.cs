@@ -10,8 +10,8 @@ public class bulletEController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.idx = 1;
-		transform.position = new Vector2(-6.25f, 3.5f);
+		this.idx = 0;
+		transform.position = new Vector2(0, -6);
 //		this.fish = GameObject.Find ("fish1_red" + idx%10);
 //		// 選択したGameObjectの座標を取得
 //		Vector3 vecFPos = fish.transform.position;
@@ -42,7 +42,7 @@ public class bulletEController : MonoBehaviour {
 			// オブジェクトに代入
 			transform.position = vecFPos;
 			if (idx == 10) {
-				idx = 1;
+				idx = 0;
 			} else {
 				idx++;
 			}
