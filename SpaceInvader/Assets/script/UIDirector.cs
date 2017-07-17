@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 using UnityEngine.UI;
 
@@ -17,12 +18,14 @@ public class UIDirector : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		scoreText.text = "Score:" + 
+			String.Format ("{0:D4}", Data.Instance.score);
 	}
-    public static void AddPoint(int p) {
-        AddScore(p);
-    } 
-    static void AddScore(int p) {
-        score += p;
+    public static void AddScore(int p) {
+		Data.Instance.score += p;
     }
+	public static void DecScore(int p) {
+		Data.Instance.score -= p;
+	}
+
 }
