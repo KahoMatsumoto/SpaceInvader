@@ -15,5 +15,8 @@ public class SceneDirector : MonoBehaviour {
 		if(Input.GetKey(KeyCode.R)){
 			SceneManager.LoadScene ("Right");
 		}
+		if(Input.GetKey(KeyCode.L)){
+			SceneManager.LoadScene ("Left");
+		}
 	}
 }

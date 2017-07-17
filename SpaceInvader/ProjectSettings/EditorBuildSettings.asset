@@ -16,4 +16,7 @@ EditorBuildSettings:
     guid: 8cbca95967b0243e1903fe999e1d0535
   - enabled: 1
     path: Assets/Scene/Right.unity
+    guid: 7ce949146bdc7401493dfc0edb05d64c
+  - enabled: 1
+    path: Assets/Scene/Left.unity
     guid: 00000000000000000000000000000000
