@@ -24,4 +24,8 @@ public class UIDirector : MonoBehaviour {
     public static void AddScore(int p) {
 		Data.Instance.score += p;
     }
+	public static void DecScore(int p) {
+		Data.Instance.score -= p;
+	}
+
 }

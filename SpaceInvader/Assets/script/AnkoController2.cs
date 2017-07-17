@@ -9,6 +9,7 @@ public class AnkoController2 : MonoBehaviour
 {
 
     public GameObject BodySourceManager;
+	public int value; // 攻撃されたときの減点
     private Dictionary<ulong, GameObject> _Bodies = new Dictionary<ulong, GameObject>();
 
     private BodySourceManager _BodyManager;
@@ -169,8 +170,14 @@ public class AnkoController2 : MonoBehaviour
 
         if (d < r1 + r2)
         {
+			// 攻撃されたら減点
+			UIDirector.DecScore(value);
+			this.gameObject.SetActive (false);
             //SceneManager.LoadScene("GameOver");
         }
+		if (d > r1 + r2) {
+			this.gameObject.SetActive (true);
+		}
         //Debug.Log ();
 
     }
