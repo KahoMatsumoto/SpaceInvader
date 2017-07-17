@@ -7,6 +7,7 @@ public class FishController : MonoBehaviour {
 	Vector3 stPos;
 	short dir;
 	float count;
+	public bool destroy;
 
 	GameObject bullet;
 //
@@ -47,7 +48,9 @@ public class FishController : MonoBehaviour {
             bullet.transform.position = 
                 GameObject.Find("ankou").transform.position;
 			UIDirector.AddScore (value);
-			Destroy (gameObject);
+			if (destroy) {
+				Destroy (gameObject);
+			} 
 		}
 	}
 
