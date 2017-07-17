@@ -9,8 +9,8 @@ public class FishController : MonoBehaviour {
 	float count;
 
 	GameObject bullet;
-
-    GameObject UIDirector;
+//
+//    GameObject UIDirector;
     public int value;
 
 	// Use this for initialization
@@ -21,6 +21,7 @@ public class FishController : MonoBehaviour {
 		StartCoroutine ("trnslt");
 
 		this.bullet = GameObject.Find ("bullet");
+//		this.UIDirector = GameObject.Find ("UIDirector");
 	}
 
 	// Update is called once per frame
@@ -45,7 +46,7 @@ public class FishController : MonoBehaviour {
 
             bullet.transform.position = 
                 GameObject.Find("ankou").transform.position;
-            UIDirector.AddPoint(value);
+			UIDirector.AddScore (value);
 			Destroy (gameObject);
 		}
 	}
