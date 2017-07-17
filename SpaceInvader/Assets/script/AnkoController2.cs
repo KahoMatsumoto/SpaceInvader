@@ -169,7 +169,7 @@ public class AnkoController2 : MonoBehaviour
 
         if (d < r1 + r2)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
         //Debug.Log ();
 
