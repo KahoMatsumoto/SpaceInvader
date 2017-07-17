@@ -41,8 +41,11 @@ public class bulletEController : MonoBehaviour {
 			vecFPos.y = vecFPos.y - 0.5f;
 			// オブジェクトに代入
 			transform.position = vecFPos;
-
-			if(idx<11)idx++;
+			if (idx == 10) {
+				idx = 1;
+			} else {
+				idx++;
+			}
 			return;
 		}
 
