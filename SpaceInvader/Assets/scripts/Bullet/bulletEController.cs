@@ -7,6 +7,8 @@ public class bulletEController : MonoBehaviour {
 	GameObject fish;
 	public float speed;
 	int idx;
+    public bool isMany;
+    public int fIdx;
 
 	// Use this for initialization
 	void Start () {
@@ -31,8 +33,13 @@ public class bulletEController : MonoBehaviour {
 	}
 
 	public void Shoot(){
-//		// 0-10の整数を生成
-//		int r = Random.Range(0,10);
+        //		// 0-10の整数を生成
+        //		int r = Random.Range(0,10);
+        if(isMany) {
+            transform.position = 
+                GameObject.Find("fish3_yellow" + fIdx).transform.position;
+            return;
+        }
 		if (GameObject.Find ("fish3_yellow" + idx%10) != null) {
 			this.fish = GameObject.Find ("fish3_yellow" + idx%10);
 			Debug.Log ("fish3_yellow" + idx % 10);
