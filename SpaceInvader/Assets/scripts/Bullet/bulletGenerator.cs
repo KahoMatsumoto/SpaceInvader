@@ -18,7 +18,7 @@ public class bulletGenerator : MonoBehaviour {
 		//{
 		//	CreateReverse(bullet, 4);
 		//}
-        StartCoroutine(LoopS(1.0f));
+        StartCoroutine(LoopS(0.5f));
 	}
 
 	void Create(GameObject fishPre, int y)
