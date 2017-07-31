@@ -42,7 +42,7 @@ public class bulletEController : MonoBehaviour {
         }
 		if (GameObject.Find ("fish3_yellow" + idx%10) != null) {
 			this.fish = GameObject.Find ("fish3_yellow" + idx%10);
-			Debug.Log ("fish3_yellow" + idx % 10);
+			//Debug.Log ("fish3_yellow" + idx % 10);
 			// 選択したGameObjectの座標を取得
 			Vector3 vecFPos = fish.transform.position;
 			vecFPos.y = vecFPos.y - 0.5f;
