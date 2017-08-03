@@ -37,7 +37,19 @@ public class SceneDirector : MonoBehaviour {
 				string s = item.Value.packets[lastPacketIndex].Data[0].ToString();
 				if (item.Value.packets[lastPacketIndex].Address == "/scene")
 				{
-					SceneManager.LoadScene(s);
+                    switch (int.Parse(s))
+                    {
+                        case 0:
+                            SceneManager.LoadScene("Left");
+                            break;
+                        case 1:
+                            SceneManager.LoadScene("Right");
+                            break;
+                        default:
+                            SceneManager.LoadScene("LeftMany");
+                            break;
+                    }
+					//SceneManager.LoadScene(s);
 				}
 			}
 		}
