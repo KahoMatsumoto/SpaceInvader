@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bulletController : MonoBehaviour {
 
+	public Slider slider;
 
 	// Use this for initialization
 	void Start () {
@@ -12,7 +14,7 @@ public class bulletController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// フレームごとに等速で上昇させる
-		transform.Translate(0,0.1f,0);
+		transform.Translate(0,slider.value,0);
 
 		// 画面外に出たらあんこうに戻る
 		if (transform.position.y > 5.0f) {

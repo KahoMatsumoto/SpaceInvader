@@ -28,7 +28,7 @@ public class SceneDirector : MonoBehaviour {
 
 		foreach (KeyValuePair<string, ServerLog> item in servers)
 		{
-			Debug.Log(item.Value.log.Count);
+			//Debug.Log(item.Value.log.Count);
 			if (item.Value.log.Count > 0)
 			{
 				Debug.Log("count is more than zero");

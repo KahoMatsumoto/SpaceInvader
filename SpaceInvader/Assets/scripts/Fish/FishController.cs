@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FishController : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class FishController : MonoBehaviour {
 	short dir;
 	float count;
 	public bool destroy;
+	Slider slider;
 
 	GameObject bullet;
 //
@@ -16,6 +18,7 @@ public class FishController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.slider = GameObject.Find ("FishSpeedSlider").GetComponent<Slider>();
 		this.stPos = transform.position;
 		this.dir = -1;
 		this.count = stPos.y;
@@ -50,7 +53,9 @@ public class FishController : MonoBehaviour {
 			UIDirector.AddScore (value);
 			if (destroy) {
 				Destroy (gameObject);
-			} 
+			} else {
+				StartCoroutine ("blink");
+			}
 		}
 	}
 
@@ -58,11 +63,12 @@ public class FishController : MonoBehaviour {
 		while (true) {
 			if (Mathf.Abs (stPos.x - transform.position.x) == 1.75f) {
 				turn();
-				yield return new WaitForSeconds (1.0f);
+				yield return new WaitForSeconds (slider.value);
+				Debug.Log (slider.value);
 			}
 			transform.Translate (dir*0.25f, 0, 0);
 
-			yield return new WaitForSeconds (1.0f);
+			yield return new WaitForSeconds (slider.value);
 		}
 	}
 
@@ -74,4 +80,15 @@ public class FishController : MonoBehaviour {
 		transform.localScale = new Vector3 (-dir*0.15f, 0.15f, 1);
 		// Debug.Log (this.count);
 	}
+	private IEnumerator blink(){
+
+		for (int i = 0; i < 2; i++) {
+			this.GetComponent<SpriteRenderer> ().color *= -1;
+
+			yield return new WaitForSeconds (slider.value/2);
+
+		}
+
+	}
+
 }
