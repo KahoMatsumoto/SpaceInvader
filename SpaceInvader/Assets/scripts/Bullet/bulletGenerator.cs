@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class bulletGenerator : MonoBehaviour {
 
 	public GameObject bullet;
-	public bool toRight;
+	//public bool toRight;
+	public bool isMany;
+	Slider slider;
+
 
 	// Use this for initialization
 	void Start()
@@ -18,16 +22,27 @@ public class bulletGenerator : MonoBehaviour {
 		//{
 		//	CreateReverse(bullet, 4);
 		//}
-        StartCoroutine(LoopS(0.5f));
+
+			
+		this.slider = GameObject.Find ("FishSpeedSlider").GetComponent<Slider> ();
+		StartCoroutine (LoopS (slider.value));
+
+
 	}
 
-	void Create(GameObject fishPre, int y)
+
+	void Create(GameObject bullet, int y)
 	{
 
-			GameObject go = Instantiate(fishPre) as GameObject;
-			go.name = fishPre.name + y;
+		GameObject go = Instantiate(bullet) as GameObject;
+		go.name = bullet.name + y;
         bulletEController bec = go.GetComponent<bulletEController>();
         bec.fIdx = y;
+		if (isMany) {
+			bec.isMany = true;
+		} else {
+			bec.isMany = false;
+		}
 	}
 	//void CreateReverse(GameObject fishPre, int y)
 	//{
@@ -41,14 +56,19 @@ public class bulletGenerator : MonoBehaviour {
     private IEnumerator LoopS(float second)
 	{
         // ループ
-        int i = 1;
+
+		int i = 1;
 		while (i<=9)
 		{
-			// secondで指定した秒数ループします
-			yield return new WaitForSeconds(second);
-			Create(bullet, i);
-            i++;
+			if (isMany) {
+				// secondで指定した秒数ループします
+				yield return new WaitForSeconds(second);
+				Create(bullet, i);
+				Debug.Log ("Create" + i + "!");
+				i++;
+			}
 		}
+        
 	}
 
 }

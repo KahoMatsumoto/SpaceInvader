@@ -10,14 +10,15 @@ public class bulletEController : MonoBehaviour {
 	int idx;
     public bool isMany;
     public int fIdx;
-	public Slider slider;
+	Slider slider;
+	Toggle tgl;
 
 	// Use this for initialization
 	void Start () {
+		//transform.position = new Vector2(0, -6);
+		//this.tgl = 
+		this.slider = GameObject.Find("BulletSpeedSlider").GetComponent<Slider>();
 		this.idx = 0;
-		transform.position = new Vector2(0, -6);
-		
-
 	}
 
 	// Update is called once per frame
@@ -32,8 +33,6 @@ public class bulletEController : MonoBehaviour {
 	}
 
 	public void Shoot(){
-        //		// 0-10の整数を生成
-        //		int r = Random.Range(0,10);
         if(isMany) {
             transform.position = 
                 GameObject.Find("fish3_yellow" + fIdx).transform.position;
@@ -54,23 +53,5 @@ public class bulletEController : MonoBehaviour {
 			}
 			return;
 		}
-
-//		if (GameObject.Find ("fish1_red" + 10) != null) {
-//			this.fish = GameObject.Find ("fish1_red" + 10);
-//			// 選択したGameObjectの座標を取得
-//			Vector3 vecFPos = fish.transform.position;
-//			// オブジェクトに代入
-//			transform.position = vecFPos;
-//			return;
-//		}
-//		if (GameObject.Find ("fish1_red" + 0) != null) {
-//			this.fish = GameObject.Find ("fish1_red" + 0);
-//			// 選択したGameObjectの座標を取得
-//			Vector3 vecFPos = fish.transform.position;
-//			// オブジェクトに代入
-//			transform.position = vecFPos;
-//			return;
-//		}
-		//Destroy (gameObject);
 	}
 }
