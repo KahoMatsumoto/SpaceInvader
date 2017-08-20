@@ -15,7 +15,7 @@ public class AnkoController3 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.bE = GameObject.Find ("bulletE");
+//		this.bE = GameObject.Find ("bulletE");
 
 	}
 
