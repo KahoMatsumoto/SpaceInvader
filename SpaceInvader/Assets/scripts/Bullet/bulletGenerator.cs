@@ -25,9 +25,7 @@ public class bulletGenerator : MonoBehaviour {
 
 			
 		this.slider = GameObject.Find ("FishESpeedSlider").GetComponent<Slider> ();
-		StartCoroutine (LoopS (1/slider.value));
-
-
+		StartCoroutine ("LoopS" ,1/slider.value);
 	}
 
 

@@ -11,7 +11,7 @@ public class AnkoController3 : MonoBehaviour {
 
 
 	public int value; // 攻撃されたときの減点
-	int jE;
+//	int jE;
 
 	// Use this for initialization
 	void Start () {
@@ -30,32 +30,46 @@ public class AnkoController3 : MonoBehaviour {
 		transform.position = ankoPos;
 
 
-		JugdeE (bE);
+//		JugdeE (bE);
 
 
 	}
 
-	void JugdeE(GameObject b) {
-		Vector2 p1 = transform.position; 				// ankoの中心座標
-		Vector2 p2 = b.transform.position; 	// bの中心座標
-		Vector2 dir = p1 - p2;
-		float d = dir.magnitude;
-		float r1 = 0.25f;	// bの半径
-		float r2 = 0.7f;	// ankoの半径
 
-		if (d < r1 + r2 && jE>0)
-		{
-			// 攻撃されたら減点
+//	void OnCollisionEnter2D(Collision2D coll){
+//		if (coll.gameObject.tag=="Enemy") {
+//			UIDirector.DecScore(value);
+//		}
+//		Debug.Log (coll.gameObject.name);
+//	}
+	void OnTriggerEnter2D(Collider2D t) {
+		if (t.gameObject.tag=="Enemy") {
 			UIDirector.DecScore(value);
-			this.jE = -1;
-			//SceneManager.LoadScene("GameOver");
 		}
-		if (d > r1 + r2) {
-			this.jE = 1;
-		}
-		//Debug.Log ();
+		Debug.Log (t.gameObject.name);
+	}
 
-	}	
+//	void JugdeE(GameObject b) {
+//		Vector2 p1 = transform.position; 				// ankoの中心座標
+//		Vector2 p2 = b.transform.position; 	// bの中心座標
+//		Vector2 dir = p1 - p2;
+//		float d = dir.magnitude;
+//		float r1 = 0.25f;	// bの半径
+//		float r2 = 0.7f;	// ankoの半径
+//
+//		if (d < r1 + r2 && jE>0)
+//		{
+//			// 攻撃されたら減点
+//			UIDirector.DecScore(value);
+//			this.jE = -1;
+//			//SceneManager.LoadScene("GameOver");
+//		}
+//		if (d > r1 + r2) {
+//			this.jE = 1;
+//		}
+//		//Debug.Log ();
+//
+//	}	
 
 
 }
