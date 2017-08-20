@@ -46,7 +46,7 @@ public class AnkoController3 : MonoBehaviour {
 		if (t.gameObject.tag=="Enemy") {
 			UIDirector.DecScore(value);
 		}
-		Debug.Log (t.gameObject.name);
+//		Debug.Log (t.gameObject.name);
 	}
 
 //	void JugdeE(GameObject b) {

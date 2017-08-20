@@ -116,7 +116,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 76666662}
-  - component: {fileID: 76666661}
   - component: {fileID: 76666663}
   - component: {fileID: 76666664}
   m_Layer: 0
@@ -126,23 +125,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &76666661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 76666660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 192dc0f9b87164778a5b5ce5635a8cf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fish2_bluePrefab: {fileID: 1291997572060846, guid: 86112ff397ec841189e1832d5b6189d3,
-    type: 2}
-  fish1_redPrefab: {fileID: 1740191179145726, guid: 6e5cafb9f808b437ea4ede2a93b9c7e0,
-    type: 2}
-  fish3_yellowPrefab: {fileID: 1072901361981008, guid: d405bb218f5f04c94a84d3e87f46ab0f,
-    type: 2}
 --- !u!4 &76666662
 Transform:
   m_ObjectHideFlags: 0
@@ -1429,7 +1411,7 @@ Prefab:
     - target: {fileID: 60940589362067336, guid: b8de058e53ef449f1a72c1ac5a447740,
         type: 2}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8de058e53ef449f1a72c1ac5a447740, type: 2}

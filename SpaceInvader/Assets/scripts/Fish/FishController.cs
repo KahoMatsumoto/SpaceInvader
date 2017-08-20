@@ -64,7 +64,7 @@ public class FishController : MonoBehaviour {
 			if (Mathf.Abs (stPos.x - transform.position.x) == 1.75f) {
 				turn();
 				yield return new WaitForSeconds (slider.value);
-				Debug.Log (slider.value);
+//				Debug.Log (slider.value);
 			}
 			transform.Translate (dir*0.25f, 0, 0);
 
@@ -77,8 +77,10 @@ public class FishController : MonoBehaviour {
 		Vector3 crPos = transform.position;
 		crPos.y = --count;
 		transform.position = crPos;
-		transform.localScale = new Vector3 (-dir*0.15f, 0.15f, 1);
-		// Debug.Log (this.count);
+//		transform.localScale = new Vector3 (-dir*0.15f, 0.15f, 1);
+		Vector3	local = transform.localScale;
+		local.x = local.x * -1;
+		transform.localScale = local;
 	}
 	private IEnumerator blink(){
 

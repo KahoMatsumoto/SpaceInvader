@@ -12,13 +12,20 @@ public class bulletEController : MonoBehaviour {
     public int fIdx;
 	Slider slider;
 	Toggle tgl;
+	int count;
 
 	// Use this for initialization
 	void Start () {
-		//transform.position = new Vector2(0, -6);
+//		transform.position = new Vector2(0, -6);
 		//this.tgl = 
+		Vector3 pos = GameObject.Find("fish3_yellow" + fIdx).transform.position;
+		pos.y++;
+		transform.position = pos;
+			
+		
 		this.slider = GameObject.Find("BulletESpeedSlider").GetComponent<Slider>();
 		this.idx = 0;
+		this.count = 0;
 	}
 
 	// Update is called once per frame
@@ -29,6 +36,18 @@ public class bulletEController : MonoBehaviour {
 		// 画面外に出たらあんこうに戻る
 		if (transform.position.y < -5.0f) {
 			Shoot();
+			if (count < 1) {
+				if (fIdx < 9) {
+					GameObject go = Instantiate (gameObject) as GameObject;
+					go.name = gameObject.name + (fIdx+1);
+					bulletEController bec = go.GetComponent<bulletEController> ();
+					bec.fIdx = this.fIdx + 1;
+					bec.isMany = true;
+
+				}
+
+				count++;
+			}
 		}
 	}
 
@@ -36,6 +55,7 @@ public class bulletEController : MonoBehaviour {
         if(isMany) {
             transform.position = 
                 GameObject.Find("fish3_yellow" + fIdx).transform.position;
+			
             return;
         }
 		if (GameObject.Find ("fish3_yellow" + idx%10) != null) {

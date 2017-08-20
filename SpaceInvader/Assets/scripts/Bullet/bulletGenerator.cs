@@ -25,7 +25,7 @@ public class bulletGenerator : MonoBehaviour {
 
 			
 		this.slider = GameObject.Find ("FishESpeedSlider").GetComponent<Slider> ();
-		StartCoroutine ("LoopS" ,1/slider.value);
+//		StartCoroutine ("LoopS" ,slider.value);
 	}
 
 
@@ -35,6 +35,7 @@ public class bulletGenerator : MonoBehaviour {
 		GameObject go = Instantiate(bullet) as GameObject;
 		go.name = bullet.name + y;
         bulletEController bec = go.GetComponent<bulletEController>();
+
         bec.fIdx = y;
 		if (isMany) {
 			bec.isMany = true;
@@ -51,26 +52,26 @@ public class bulletGenerator : MonoBehaviour {
 	//		go.transform.position = new Vector3(-6.25f + i * 1.25f, y, 0);
 	//	}
 	//}
-    private IEnumerator LoopS(float second)
-	{
-        // ループ
-
-		int i = 1;
-		while (i<=9)
-		{
-			if (isMany) {
-				// secondで指定した秒数ループします
-
-				Create(bullet, i);
-				Debug.Log ("Create" + i + "!");
-				i++;
-				yield return new WaitForSeconds(second);
-			} else {
-				yield return new WaitForSeconds(second);
-			}
-
-		}
-        
-	}
+//    private IEnumerator LoopS(float second)
+//	{
+//        // ループ
+//
+//		int i = 1;
+//		while (i<=9)
+//		{
+//			if (isMany) {
+//				// secondで指定した秒数ループします
+//
+//				Create(bullet, i);
+//				Debug.Log ("Create" + i + "!");
+//				i++;
+//				yield return new WaitForSeconds(second);
+//			} else {
+//				yield return new WaitForSeconds(second);
+//			}
+//
+//		}
+//        
+//	}
 
 }
