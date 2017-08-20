@@ -6,13 +6,14 @@ public class FishGenerator2 : MonoBehaviour {
 
 	public GameObject fish;
 	public bool toRight;
+	public int idx;
 
 	// Use this for initialization
 	void Start () {
 		if (toRight) {
-			Create (fish, 4);
+			Create (fish, idx);
 		} else {
-			CreateReverse (fish, 4);
+			CreateReverse (fish, idx);
 		}
 	}
 

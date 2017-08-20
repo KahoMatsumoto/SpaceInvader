@@ -24,8 +24,8 @@ public class bulletGenerator : MonoBehaviour {
 		//}
 
 			
-		this.slider = GameObject.Find ("FishSpeedSlider").GetComponent<Slider> ();
-		StartCoroutine (LoopS (slider.value));
+		this.slider = GameObject.Find ("FishESpeedSlider").GetComponent<Slider> ();
+		StartCoroutine (LoopS (1/slider.value));
 
 
 	}
@@ -62,11 +62,15 @@ public class bulletGenerator : MonoBehaviour {
 		{
 			if (isMany) {
 				// secondで指定した秒数ループします
-				yield return new WaitForSeconds(second);
+
 				Create(bullet, i);
 				Debug.Log ("Create" + i + "!");
 				i++;
+				yield return new WaitForSeconds(second);
+			} else {
+				yield return new WaitForSeconds(second);
 			}
+
 		}
         
 	}

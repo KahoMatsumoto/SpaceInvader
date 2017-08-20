@@ -17,7 +17,7 @@ public class bulletEController : MonoBehaviour {
 	void Start () {
 		//transform.position = new Vector2(0, -6);
 		//this.tgl = 
-		this.slider = GameObject.Find("BulletSpeedSlider").GetComponent<Slider>();
+		this.slider = GameObject.Find("BulletESpeedSlider").GetComponent<Slider>();
 		this.idx = 0;
 	}
 
