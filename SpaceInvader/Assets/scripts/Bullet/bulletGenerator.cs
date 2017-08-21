@@ -8,7 +8,9 @@ public class bulletGenerator : MonoBehaviour {
 	public GameObject bullet;
 	//public bool toRight;
 	public bool isMany;
-	Slider slider;
+//	Slider slider;
+	public Toggle toggle;
+
 
 
 	// Use this for initialization
@@ -24,7 +26,7 @@ public class bulletGenerator : MonoBehaviour {
 		//}
 
 			
-		this.slider = GameObject.Find ("FishESpeedSlider").GetComponent<Slider> ();
+		//this.slider = GameObject.Find ("FishESpeedSlider").GetComponent<Slider> ();
 //		StartCoroutine ("LoopS" ,slider.value);
 	}
 
@@ -37,11 +39,11 @@ public class bulletGenerator : MonoBehaviour {
         bulletEController bec = go.GetComponent<bulletEController>();
 
         bec.fIdx = y;
-		if (isMany) {
-			bec.isMany = true;
-		} else {
-			bec.isMany = false;
-		}
+//		if (toggle.enabled) {
+//			bec.isMany = true;
+//		} else {
+//			bec.isMany = false;
+//		}
 	}
 	//void CreateReverse(GameObject fishPre, int y)
 	//{

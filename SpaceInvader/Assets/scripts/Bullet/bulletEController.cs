@@ -11,7 +11,7 @@ public class bulletEController : MonoBehaviour {
     public bool isMany;
     public int fIdx;
 	Slider slider;
-	Toggle tgl;
+	Toggle toggle;
 	int count;
 
 	// Use this for initialization
@@ -24,6 +24,7 @@ public class bulletEController : MonoBehaviour {
 			
 		
 		this.slider = GameObject.Find("BulletESpeedSlider").GetComponent<Slider>();
+		this.toggle = GameObject.Find("ToggleMany").GetComponent<Toggle>();
 		this.idx = 0;
 		this.count = 0;
 	}
@@ -36,14 +37,13 @@ public class bulletEController : MonoBehaviour {
 		// 画面外に出たらあんこうに戻る
 		if (transform.position.y < -5.0f) {
 			Shoot();
-			if (count < 1) {
+			if (count < 1 && toggle.isOn) {
 				if (fIdx < 9) {
 					GameObject go = Instantiate (gameObject) as GameObject;
 					go.name = gameObject.name + (fIdx+1);
 					bulletEController bec = go.GetComponent<bulletEController> ();
 					bec.fIdx = this.fIdx + 1;
-					bec.isMany = true;
-
+//					bec.isMany = true;
 				}
 
 				count++;
@@ -52,7 +52,7 @@ public class bulletEController : MonoBehaviour {
 	}
 
 	public void Shoot(){
-        if(isMany) {
+		if(toggle.isOn) {
             transform.position = 
                 GameObject.Find("fish3_yellow" + fIdx).transform.position;
 			
