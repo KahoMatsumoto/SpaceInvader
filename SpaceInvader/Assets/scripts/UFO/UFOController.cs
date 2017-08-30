@@ -11,6 +11,7 @@ public class UFOController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.bullet = GameObject.Find ("bullet");
+        StartCoroutine("brbr");
 	}
 	
 	// Update is called once per frame
@@ -43,6 +44,22 @@ public class UFOController : MonoBehaviour {
 
 			yield return new WaitForSeconds (0.1f);
 
+		}
+
+	}
+	private IEnumerator brbr()
+	{
+        int k = 1;
+
+        while (true)
+		{
+
+            transform.Rotate(new Vector3(0,0,12 * k));
+			yield return new WaitForSeconds(0.5f);
+            transform.Rotate(new Vector3(0, 0, 12 * k * -1));
+
+			k *= -1;
+            yield return new WaitForSeconds(0.5f);
 		}
 
 	}
