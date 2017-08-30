@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneDirector : MonoBehaviour {
-
+	private long latestTimeStamp = 0;
 	// Use this for initialization
 	void Start () {
 		OSCHandler.Instance.Init();
@@ -23,37 +23,70 @@ public class SceneDirector : MonoBehaviour {
 	void ListenToOSC()
 	{
 		OSCHandler.Instance.UpdateLogs();
-		Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog>();
-		servers = OSCHandler.Instance.Servers;
 
-		foreach (KeyValuePair<string, ServerLog> item in servers)
+		foreach (KeyValuePair<string, ServerLog> item in OSCHandler.Instance.Servers)
 		{
-			//Debug.Log(item.Value.log.Count);
-			if (item.Value.log.Count > 0)
+			if (item.Value.packets.Count == 0)
 			{
-				Debug.Log("count is more than zero");
-				int lastPacketIndex = item.Value.packets.Count - 1;
-
-				string s = item.Value.packets[lastPacketIndex].Data[0].ToString();
-				if (item.Value.packets[lastPacketIndex].Address == "/scene")
-				{
-                    switch (int.Parse(s))
-                    {
-                        case 0:
-                            SceneManager.LoadScene("Left");
-                            break;
-                        case 1:
-                            SceneManager.LoadScene("Right");
-                            break;
-                        default:
-                            SceneManager.LoadScene("LeftMany");
-                            break;
-                    }
-					//SceneManager.LoadScene(s);
-				}
+				continue;
 			}
+
+			int latestPacketIndex = item.Value.packets.Count - 1;
+
+			if (this.latestTimeStamp == item.Value.packets[latestPacketIndex].TimeStamp)
+			{
+				continue;
+			}
+
+			this.latestTimeStamp = item.Value.packets[latestPacketIndex].TimeStamp;
+
+			string s = item.Value.packets[latestPacketIndex].Data[0].ToString();
+			Debug.Log(s);
+			if (item.Value.packets [latestPacketIndex].Address == "/scene") {
+				SceneManager.LoadScene (s);
+			}
+//			Debug.Log("Receive : "
+//				+ item.Value.packets[latestPacketIndex].TimeStamp
+//				+ " / "
+//				+ item.Value.packets[latestPacketIndex].Address
+//				+ " / "
+//				+ item.Value.packets[latestPacketIndex].Data[0]);
 		}
-		OSCHandler.Instance.UpdateLogs();
+//		OSCHandler.Instance.UpdateLogs();
+//		Dictionary<string, ServerLog> servers = new Dictionary<string, ServerLog>();
+//		servers = OSCHandler.Instance.Servers;
+//
+//		foreach (KeyValuePair<string, ServerLog> item in servers)
+//		{
+//			Debug.Log(item.Value.log.Count);
+//			if (item.Value.log.Count > 0)
+//			{
+//				Debug.Log("count is more than zero");
+//				int lastPacketIndex = item.Value.packets.Count - 1;
+//
+//				string s = item.Value.packets[lastPacketIndex].Data[0].ToString();
+//                Debug.Log(s);
+//				if (item.Value.packets[lastPacketIndex].Address == "/scene")
+//				{
+//					SceneManager.LoadScene (s);
+////                    switch (int.Parse(s))
+////                    {
+////                        case 0:
+////                            SceneManager.LoadScene("LeftUFO");
+////                            break;
+////                        case 1:
+////                            SceneManager.LoadScene("RightUFO");
+////                            break;
+////                        default:
+////                            SceneManager.LoadScene("Stage1");
+////                            break;
+////                    }
+//					//SceneManager.LoadScene(s);
+//				}
+//			}
+//		}
+//		OSCHandler.Instance.UpdateLogs();
+//		Debug.Log ("kita");
 	}
 
 }
