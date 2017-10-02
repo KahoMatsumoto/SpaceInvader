@@ -151,6 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1072901361981008, guid: d405bb218f5f04c94a84d3e87f46ab0f, type: 2}
   isShoot: 0
+  isUniqueName: 0
+  name: 
   toRight: 0
   idx: 4
 --- !u!114 &76666664
@@ -166,8 +168,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fish: {fileID: 1072901361981008, guid: d405bb218f5f04c94a84d3e87f46ab0f, type: 2}
   isShoot: 1
+  isUniqueName: 0
+  name: 
   toRight: 0
   idx: 3
+--- !u!1001 &281529022
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416227834213614, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e06ed48bbf17a463399c2e784ef20f81, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &325852440
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1246346405027526, guid: 0de4e3e15e86247efb73ec56149b3410, type: 2}
   isMany: 1
+  toggle: {fileID: 0}
 --- !u!4 &903758217
 Transform:
   m_ObjectHideFlags: 0
