@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Game\Scripts\Anko\AnkoController3.cs" />
      <Compile Include="Assets\Game\Scripts\Anko\AnkoController3kinect.cs" />
+     <Compile Include="Assets\Game\Scripts\Bullet\WallController.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet\bulletBController.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet\bulletController.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet\bulletEController.cs" />
