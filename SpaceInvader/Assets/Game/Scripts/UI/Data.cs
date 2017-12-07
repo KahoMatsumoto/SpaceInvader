@@ -12,5 +12,5 @@ public class Data
 
     public float BESSlevel = 0.021f;
     public float BPSSlevel = 0.021f;
-    public float FSSlevel = 0.021f;
+    public float FSSlevel = 3.06f;
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Game/Scenes/RightUFO.unity
-  isLoaded: 1
-  isActive: 1
+- path: Assets/Game/Scenes/Finish.unity
+  isLoaded: 0
+  isActive: 0

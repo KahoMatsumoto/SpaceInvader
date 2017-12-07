@@ -13,6 +13,7 @@ public class bulletEController : MonoBehaviour {
 	Slider slider;
 	Toggle toggle;
 	int count;
+    public bool center;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +24,6 @@ public class bulletEController : MonoBehaviour {
 		transform.position = pos;
 			
 		
-		this.slider = GameObject.Find("BulletESpeedSlider").GetComponent<Slider>();
 		this.toggle = GameObject.Find("ToggleMany").GetComponent<Toggle>();
 		this.idx = 0;
 		this.count = 0;
@@ -32,18 +32,24 @@ public class bulletEController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// フレームごとに等速で下降させる
-		transform.Translate(0,slider.value,0);
+		transform.Translate(0,Data.Instance.BESSlevel,0);
 
 		// 画面外に出たらあんこうに戻る
 		if (transform.position.y < -5.0f) {
 			Shoot();
 			if (count < 1 && toggle.isOn) {
 				if (fIdx < 9) {
-					GameObject go = Instantiate (gameObject) as GameObject;
-					go.name = gameObject.name + (fIdx+1);
-					bulletEController bec = go.GetComponent<bulletEController> ();
-					bec.fIdx = this.fIdx + 1;
-//					bec.isMany = true;
+                    if (center && fIdx > 6)
+                    {
+                    }
+                    else
+                    {
+                        GameObject go = Instantiate(gameObject) as GameObject;
+                        go.name = gameObject.name + (fIdx + 1);
+                        bulletEController bec = go.GetComponent<bulletEController>();
+                        bec.fIdx = this.fIdx + 1;
+                        //					bec.isMany = true;
+                    }
 				}
 
 				count++;
