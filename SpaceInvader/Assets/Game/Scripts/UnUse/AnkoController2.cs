@@ -131,7 +131,7 @@ public class AnkoController2 : MonoBehaviour
     }
     private void RefreshBodyObject(Kinect.Body body, GameObject bodyObject)
     {
-        Vector3 center = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineBase]);
+        //Vector3 center = GetVector3FromJoint(body.Joints[Kinect.JointType.SpineBase]);
 
         for (Kinect.JointType jt = Kinect.JointType.SpineMid; jt <= Kinect.JointType.SpineMid; jt++)
         {

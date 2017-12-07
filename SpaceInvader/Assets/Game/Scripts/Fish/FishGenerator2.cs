@@ -7,7 +7,7 @@ public class FishGenerator2 : MonoBehaviour {
 	public GameObject fish;
 	public bool isShoot;
 	public bool isUniqueName;
-	public string name;
+	//public string name;
 	public bool toRight;
 	public int idx;
 

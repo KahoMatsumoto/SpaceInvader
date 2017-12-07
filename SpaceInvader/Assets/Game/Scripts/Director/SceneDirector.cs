@@ -17,6 +17,13 @@ public class SceneDirector : MonoBehaviour {
 		if (message.address == "/scene") {
 			var sceneName = (string)message.values [0];
 			Debug.Log (sceneName);
+            if(sceneName == "Left")
+                {
+                    sceneName = sceneName + "UFO";
+                }
+            else if (sceneName == "Right") {
+                    sceneName = sceneName + "UFO";
+                }
 			SceneManager.LoadScene (sceneName);
 		}
 	}

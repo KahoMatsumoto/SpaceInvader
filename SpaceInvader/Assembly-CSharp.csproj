@@ -54,8 +54,8 @@
      <Compile Include="Assets\Game\Scripts\Bullet\bulletGenerator.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet\bulletRController.cs" />
      <Compile Include="Assets\Game\Scripts\Bullet\bulletYController.cs" />
+     <Compile Include="Assets\Game\Scripts\Director\KinectReadyDirector.cs" />
      <Compile Include="Assets\Game\Scripts\Director\SceneDirector.cs" />
-     <Compile Include="Assets\Game\Scripts\Director\StartDirector.cs" />
      <Compile Include="Assets\Game\Scripts\Fish\Blinker.cs" />
      <Compile Include="Assets\Game\Scripts\Fish\FishController.cs" />
      <Compile Include="Assets\Game\Scripts\Fish\FishGenerator2.cs" />
@@ -67,6 +67,7 @@
      <Compile Include="Assets\Game\Scripts\UnUse\AnkoController2.cs" />
      <Compile Include="Assets\Game\Scripts\UnUse\FinishDirector.cs" />
      <Compile Include="Assets\Game\Scripts\UnUse\SliderController.cs" />
+     <Compile Include="Assets\Game\Scripts\UnUse\StartDirector.cs" />
      <Compile Include="Assets\Game\Standard Assets\CameraIntrinsics.cs" />
      <Compile Include="Assets\Game\Standard Assets\CollectionMap.cs" />
      <Compile Include="Assets\Game\Standard Assets\EventPump.cs" />
