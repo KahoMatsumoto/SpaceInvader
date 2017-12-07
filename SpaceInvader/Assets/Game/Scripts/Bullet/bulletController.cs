@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class bulletController : MonoBehaviour {
 
 	public Slider slider;
+    public GameObject ankou;
 
 	// Use this for initialization
 	void Start () {
@@ -23,12 +24,13 @@ public class bulletController : MonoBehaviour {
 	}
 
 	public void Shoot(){
-		//マウスのx,y座標を取得
-		Vector3 vecMouse = Input.mousePosition;
-		//ワールド座標に変換じゃ！！
-		Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
-		//オブジェクトに代入じゃ！！
-		Vector3 ankoPos = new Vector3(screenPos.x,-4,0);
-		transform.position = ankoPos;
+        //マウスのx,y座標を取得
+        //Vector3 vecMouse = Input.mousePosition;
+        //ワールド座標に変換じゃ！！
+        //Vector3 screenPos = Camera.main.ScreenToWorldPoint(vecMouse);
+        //オブジェクトに代入じゃ！！
+        //Vector3 ankoPos = new Vector3(screenPos.x,-4,0);
+        Vector3 ankoPos =ankou.transform.position;
+        transform.position = ankoPos;
 	}
 }
