@@ -28,4 +28,9 @@ public class UIDirector : MonoBehaviour {
 		Data.Instance.score -= p;
 	}
 
+    public static int GetScore()
+    {
+        return Data.Instance.score;
+    }
+
 }

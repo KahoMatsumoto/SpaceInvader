@@ -9,7 +9,7 @@ public class FishController : MonoBehaviour {
 	short dir;
 	float count;
 	public bool destroy;
-	Slider slider;
+	
 
 	GameObject bullet;
 //
@@ -18,14 +18,12 @@ public class FishController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.slider = GameObject.Find ("FishSpeedSlider").GetComponent<Slider>();
 		this.stPos = transform.position;
 		this.dir = -1;
 		this.count = stPos.y;
 		StartCoroutine ("trnslt");
 
 		this.bullet = GameObject.Find ("bullet");
-//		this.UIDirector = GameObject.Find ("UIDirector");
 	}
 
 	// Update is called once per frame
@@ -63,12 +61,12 @@ public class FishController : MonoBehaviour {
 		while (true) {
 			if (Mathf.Abs (stPos.x - transform.position.x) == 1.75f) {
 				turn();
-				yield return new WaitForSeconds (slider.value);
+				yield return new WaitForSeconds (Data.Instance.FSSlevel);
 //				Debug.Log (slider.value);
 			}
 			transform.Translate (dir*0.25f, 0, 0);
 
-			yield return new WaitForSeconds (slider.value);
+			yield return new WaitForSeconds (Data.Instance.FSSlevel);
 		}
 	}
 
@@ -87,7 +85,7 @@ public class FishController : MonoBehaviour {
 		for (int i = 0; i < 2; i++) {
 			this.GetComponent<SpriteRenderer> ().color *= -1;
 
-			yield return new WaitForSeconds (slider.value/2);
+			yield return new WaitForSeconds (Data.Instance.FSSlevel/2);
 
 		}
 
